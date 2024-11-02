@@ -33,8 +33,8 @@ app.get('/', (req, res) => {
 });
 
 // Import routes
-// const userRoutes = require('./routes/users');
-// app.use('/api/users', userRoutes);
+import authRoutes from './routes/auth.routes.js'; // Import the auth routes
+app.use('/api/users', authRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 5000;
