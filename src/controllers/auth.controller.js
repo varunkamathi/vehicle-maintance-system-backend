@@ -3,7 +3,8 @@ import User from '../model/User.model.js'
 import bcrypt from 'bcrypt';// For hashing passwords
 import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = 'your_jwt_secret'; // Replace with an actual secret or load from environment variables
+const JWT_SECRET = process.env.JWT_SECRET_KEY;
+ // Replace with an actual secret or load from environment variables
 
 // Registration controller
 export const registerUser = async (req, res) => {
@@ -52,4 +53,19 @@ export const registerUser = async (req, res) => {
     res.status(500).json({ message: 'Login failed', error });
   }
 };
+
+ export const getProfile = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password'); // Exclude sensitive fields
+    console.log(req.user.id);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    res.json(user);
+  } catch (error) {
+    console.error('Error fetching profile:', error);
+    res.status(500).json({ error: 'Server error' });
+  }
+};
+
 

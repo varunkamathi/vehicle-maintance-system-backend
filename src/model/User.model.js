@@ -1,9 +1,9 @@
 // models/User.js
 import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';// For hashing passwords
-const SALT_ROUNDS = 10;
+// For hashing passwords
 
 const userSchema = new mongoose.Schema({
+
   email: {
     type: String,
     required: true,
@@ -15,9 +15,15 @@ const userSchema = new mongoose.Schema({
     required: true,
     minlength: 6,
   },
+  vehicles: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Vehicle' }]
+
 }, { timestamps: true });
 
-
+userSchema.methods.generateAuthToken = function () {
+  const payload = { id: this._id }; // Use the user's unique ID as the payload
+  const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: '1h' }); // Replace with your JWT secret
+  return token;
+};
 // Pre-save middleware to hash the password before saving it
 /*userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();

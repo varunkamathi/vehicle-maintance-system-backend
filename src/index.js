@@ -1,6 +1,5 @@
 // Import necessary modules
 import express from 'express';
-import mongoose from 'mongoose';  // If you're using MongoDB
 import cors from 'cors'; // For handling Cross-Origin requests
 import dotenv from 'dotenv';
 import connectDB from './db/index.js';
