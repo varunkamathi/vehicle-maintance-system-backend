@@ -1,11 +1,14 @@
 import mongoose from 'mongoose';
+import { Schema } from 'mongoose';
 
 const VehicleSchema = new mongoose.Schema({
+    user: {  type: Schema.Types.ObjectId,
+    ref: "User" },
     vehicleData: {
-        make: { type: String, required: true },
-        model: { type: String, required: true },
-        registration: { type: String, required: true },
-        vin: { type: String, required: true },
+        make: { type: String,},
+        model: { type: String },
+        registration: { type: String },
+        vin: { type: String },
       },
       serviceData: {
         lastServiceDate: { type: Date },
@@ -14,11 +17,11 @@ const VehicleSchema = new mongoose.Schema({
         serviceCenter: { type: String },
         cost: { type: Number },
       },
-      user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+      
     }, { timestamps: true });
     // Link vehicle to a user
 
 
-const Vehicle = mongoose.model('Vehicle', VehicleSchema);
+export const Vehicle = mongoose.model('Vehicle', VehicleSchema);
 
-export default Vehicle;
+

@@ -1,28 +1,30 @@
-// api/routes/auth.js
-import express from 'express';
-import authMiddleware from '../middlewares/auth.middlewares.js';
-const router = express.Router();
-import { registerUser, loginUser, getProfile} from '../controllers/auth.controller.js'; // Import the controller
-import {addVehicle, getVehicles } from '../controllers/vehicle.controller.js'
-
-// Registration route
-router.post('/register', registerUser);
-
-// Login route
-router.post('/login', loginUser);
-
-router.get('/profile',  authMiddleware, getProfile);
-
-// POST route to add a vehicle
-router.post('/add', authMiddleware, async (req, res) => {
-    console.log('Authenticated User Data:', req.user); // Debug log
-    await addVehicle(req, res); // Call the controller function
-  });
-
-// GET route to fetch user vehicles
-router.get('/user-vehicles', authMiddleware ,getVehicles);
+import { Router } from "express";
+import { 
+    loginUser, 
+    logoutUser, 
+    registerUser, 
+    refreshAccessToken, 
+    changeCurrentPassword, 
+    getCurrentUser,
+    updateAccountDetails
+} from "../controllers/auth.controller.js";
+import { verifyJWT } from "../middlewares/auth.middlewares.js";
 
 
+const router = Router()
+
+router.route("/register").post(registerUser)
+
+router.route("/login").post(loginUser)
+
+//secured routes
+router.route("/logout").post(verifyJWT,  logoutUser)
+router.route("/refresh-token").post(refreshAccessToken)
+router.route("/current-user").get(verifyJWT, getCurrentUser)
+
+router.route("/change-password").post(verifyJWT, changeCurrentPassword)
+router.route("/update-account").patch(verifyJWT, updateAccountDetails)
 
 
-export default router;
+
+export default router

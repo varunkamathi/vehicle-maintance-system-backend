@@ -1,31 +1,31 @@
-// api/middleware/authMiddleware.js
-import jwt from 'jsonwebtoken';
-import User from '../model/User.model.js'; // Import the User model
 
-const authMiddleware = async (req, res, next) => {
-  const authHeader = req.headers['authorization'];
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return res.status(401).json({ message: 'Access denied, no token provided' });
-  }
+import { asyncHandler } from "../util/asyncHandler.js";
+import jwt from "jsonwebtoken"
+import { User } from "../model/User.model.js";
+import { Apierrorr } from "../util/Apierrorr.js";
 
-  const token = authHeader.split(' ')[1];
-  try {
-    // Decode the token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+export const verifyJWT = asyncHandler(async(req, _, next) => {
+    try {
+        const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "")
+        
+        // console.log(token);
+        if (!token) {
+            throw new Apierrorr(401, "Unauthorized request")
+        }
     
-    // Find the user in the database
-    const user = await User.findById(decoded.id);
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+        const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
+    
+        const user = await User.findById(decodedToken?._id).select("-password -refreshToken")
+    
+        if (!user) {
+            console.log("user not find" , error)
+            
+        }
+    
+        req.user = user;
+        next()
+    } catch (error) {
+        throw new Apierrorr(401, error?.message || "Invalid access token")
     }
-
-    // Attach the user details to the request object
-    req.user = user;
-    next(); // Pass control to the next middleware or route handler
-  } catch (error) {
-    console.error('Token verification failed:', error);
-    res.status(401).json({ message: 'Invalid token' });
-  }
-};
-
-export default authMiddleware;
+    
+});
