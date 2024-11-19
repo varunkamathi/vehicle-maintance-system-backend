@@ -10,6 +10,6 @@ const router = Router();
 router.post("/add", verifyJWT,addVehicle);
 
 // Route to get all vehicles for the logged-in user
-router.get("/get", verifyJWT , getVehicles);
+router.get("/get/:userId", verifyJWT , getVehicles);
 
 export default router;

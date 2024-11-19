@@ -2,8 +2,11 @@ import mongoose from 'mongoose';
 import { Schema } from 'mongoose';
 
 const VehicleSchema = new mongoose.Schema({
-    user: {  type: Schema.Types.ObjectId,
-    ref: "User" },
+    userId: {  
+      type: Schema.Types.ObjectId,
+      ref: "User" 
+    }
+    ,
     vehicleData: {
         make: { type: String,},
         model: { type: String },

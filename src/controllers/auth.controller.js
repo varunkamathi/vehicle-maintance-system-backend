@@ -85,7 +85,7 @@ const loginUser = asyncHandler(async (req, res) =>{
     const {email, password} = req.body
     console.log(email);
 
-    if (!email) {
+    if (!email || !password) {
         throw new Apierrorr(400, "username or email is required")
     }
     
@@ -232,15 +232,12 @@ const changeCurrentPassword = asyncHandler(async(req, res) => {
 const getCurrentUser = asyncHandler(async(req, res) => {
     return res
     .status(200)
-    .json(new ApiResponse(
-        200,
-        req.user,
-        "User fetched successfully"
-    ))
+    .json(new ApiResponse(200,req.user,"User fetched successfully"))
 })
 
 const updateAccountDetails = asyncHandler(async(req, res) => {
-    const {fullName, email} = req.body
+    
+     const {fullName, email} = req.body
 
     if (!fullName || !email) {
         throw new Apierrorr(400, "All fields are required")
@@ -259,8 +256,8 @@ const updateAccountDetails = asyncHandler(async(req, res) => {
     ).select("-password")
 
     return res
-    .status(200)
-    .json(new ApiResponse(200, user, "Account details updated successfully"))
+     .status(200)
+     .json(new ApiResponse(200, user, "Account details updated successfully"))
 });
 
 
