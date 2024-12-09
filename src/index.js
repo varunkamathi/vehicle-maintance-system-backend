@@ -43,6 +43,8 @@ app.use('/api/users', authRoutes);
 import vehicleRoutes from './routes/vehicle.routes.js'; // Use the vehicle route
 app.use("/api/vehicles", vehicleRoutes);
 
+
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
