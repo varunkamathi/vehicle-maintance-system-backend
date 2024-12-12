@@ -66,23 +66,22 @@ router.get(
  * Route to delete a vehicle
  * Endpoint: DELETE /api/vehicles/:id
  */
-router.delete(
-  '/:id',
-  asyncHandler(async (req, res) => {
-    const { id } = req.params;
+router.delete("/delete/:_id", async (req, res) => {
+  const { _id } = req.params;
+  console.log("user : ",_id);
 
-    try {
-      const result = await Vehicle.findByIdAndDelete(id);
-      if (!result) {
-        return res.status(404).json({ error: 'Vehicle not found' });
-      }
-      res.status(200).json({ message: 'Vehicle deleted successfully', result });
-    } catch (error) {
-      console.error('Error deleting vehicle:', error.message);
-      res.status(500).json({ error: 'Internal server error while deleting vehicle.' });
+  try {
+    const deletedVehicle = await Vehicle.findByIdAndDelete(_id);
+
+    if (!deletedVehicle) {
+      return res.status(404).json({ message: "Vehicle not found" });
     }
-  })
-);
+
+    res.status(200).json({ message: "Vehicle deleted successfully", vehicle: deletedVehicle });
+  } catch (error) {
+    res.status(500).json({ message: "Error deleting vehicle", error });
+  }
+});
 
 /**
  * Route to fetch vehicle details from the RTO API

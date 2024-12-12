@@ -35,6 +35,8 @@ export const getVehicles = asyncHandler(async (req, res) => {
   // Fetch all vehicles associated with the authenticated user
   const {userId}=req.params;
   console.log("user id from params",userId);
+  const vehicle = await Vehicle.find({_id});
+  console.log("vehicleId : ", _id);
 
   const vehicles = await Vehicle.find({ userId:userId });
 
