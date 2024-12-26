@@ -5,6 +5,7 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 import { asyncHandler } from '../util/asyncHandler.js';
 import {Vehicle} from '../model/vehicle.model.js'; // Import the Vehicle model
+import vehicleData from '../data.json'
 
 // Load environment variables from .env file
 dotenv.config();
@@ -89,23 +90,73 @@ router.delete("/delete/:_id", async (req, res) => {
  */
 
 // add vehical
-router.get(
-  '/rto/lookup',
-  asyncHandler(async (req, res) => {
-    const { vehicle_no ,ownerName,userId} = req.query;
+// Sample JSON data
 
-    console.log("vehicle number is",vehicle_no);
+
+// Route to fetch vehicle details by registration number
+
+  router.get(
+    '/vehicle/:rc_regn_no',
+    asyncHandler(async (req, res) => {
+      const { rc_regn_no } = req.params;
+  
+      // Check if the vehicle exists in the data
+      const vehicle = vehicleData[rc_regn_no];
+  
+      if (!vehicle) {
+        return res.status(404).json({ error: 'Vehicle not found' });
+      }
+  
+      // Return the vehicle details
+      res.status(200).json(vehicle);
+    })
+  );
+  
+router.get(
+  '/rto/:rc_regn_no',
+  asyncHandler(async (req, res) => {
+    //const { vehicle_no ,ownerName,userId} = req.query;
+    const rcRegnNo = req.params.rc_regn_no;
+
+    console.log("vehicle number is",rcRegnNo);
     
-    const apiKey = process.env.RTO_API_KEY;
-    console.log("apikey is",apiKey);
+   // const apiKey = process.env.RTO_API_KEY;
+    //console.log("apikey is",apiKey);
 
     if (!vehicle_no || !userId) {
       return res.status(400).json({ error: 'All fields are  required like vehicle no and userId.' });
     }
+   // const apiUrl = `https://rappid.in/apis/rto/rc_vehicle_details.php?key=${apiKey}&vehicle_no=${vehicle_no}`;
+   const jsonUrl = "https://varunkamathi.github.io/RTO_data/flutter.json";
 
-    const apiUrl = `https://rappid.in/apis/rto/rc_vehicle_details.php?key=${apiKey}&vehicle_no=${vehicle_no}`;
 
-    try {
+   try {
+     // Fetch JSON data from the GitHub URL
+     const response = await fetch(jsonUrl);
+
+     if (!response.ok) {
+       // Handle HTTP errors
+       throw new Error(`Failed to fetch JSON data: ${response.statusText}`);
+     }
+
+     const data = await response.json(); // Parse the JSON response
+
+     // Find the vehicle matching the provided registration number
+     const specificVehicle = data.find(vehicle => vehicle.rc_regn_no === rcRegnNo);
+
+     if (!specificVehicle) {
+       // If the vehicle is not found
+       return res.status(404).json({ error: "Vehicle not found in the data." });
+     }
+
+     // Respond with the specific vehicle data
+     res.status(200).json(specificVehicle);
+   } catch (error) {
+     console.error("Error fetching JSON data:", error.message);
+     res.status(500).json({ error: "Internal server error while fetching vehicle data." });
+   }
+
+    /*try {
       const response = await axios.get(apiUrl,{
         timeout:30000
       });
@@ -166,7 +217,7 @@ router.get(
         res.status(500).json({ error: 'Internal server error while fetching RTO data.' });
       }
     }
-  })
-);
+  })*/
+}));
 
 export default router;
