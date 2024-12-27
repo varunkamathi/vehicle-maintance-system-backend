@@ -45,7 +45,8 @@ const VehicleSchema = new mongoose.Schema({
         type:String
       }
 
-    }
+    },
+   
     
       // serviceData: {
       //   lastServiceDate: { type: Date },
@@ -59,6 +60,29 @@ const VehicleSchema = new mongoose.Schema({
     // Link vehicle to a user
 
 
+
+   // challan schema
+  const eChallanSchema = new mongoose.Schema({
+    userId: {  
+      type: Schema.Types.ObjectId,
+      ref: "User" 
+    },
+  vehicle_no: {   
+    vehicle_no: { type: String },
+    },
+  challans: 
+    {
+      challanNo: { type: String },
+      date: { type: String },
+      amount: { type: String },
+      status: { type: String },
+      violation: { type: String},
+      location: { type: String },
+    },
+  
+});
+
+export const Echallan = mongoose.model('Echallan',eChallanSchema);
 export const Vehicle = mongoose.model('Vehicle', VehicleSchema);
 
 

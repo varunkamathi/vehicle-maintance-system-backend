@@ -4,8 +4,10 @@ import { verifyJWT } from '../middlewares/auth.middlewares.js';
 import axios from 'axios';
 import dotenv from 'dotenv';
 import { asyncHandler } from '../util/asyncHandler.js';
-import {Vehicle} from '../model/vehicle.model.js'; // Import the Vehicle model
+import {Vehicle} from '../model/vehicle.model.js';
+import {Echallan} from '../model/vehicle.model.js';  // Import the Vehicle model
 import vehicleData from '../data.json' assert { type: 'json' };
+import eChallanData from '../challan.json' assert { type: 'json' };
 
 // Load environment variables from .env file
 dotenv.config();
@@ -175,6 +177,104 @@ router.get(
     }
   })
 );
+// Mock data for e-challan
+/*const eChallanData = {
+  MH20HC7323: [
+    {
+      challanNo: 'CHL001234',
+      date: '2024-12-20',
+      amount: 500,
+      status: 'Pending',
+      violation: 'Speeding',
+      location: 'Chhatrapati Sambhajinagar',
+    },
+    {
+      challanNo: 'CHL001235',
+      date: '2024-10-15',
+      amount: 300,
+      status: 'Paid',
+      violation: 'Parking Violation',
+      location: 'Chhatrapati Sambhajinagar',
+    },
+  ],
+  MH24AN2786: [
+    {
+      challanNo: 'CHL002345',
+      date: '2024-11-10',
+      amount: 1000,
+      status: 'Pending',
+      violation: 'Signal Jumping',
+      location: 'Latur',
+    },
+  ],
+};*/
+
+router.get(
+  '/vehicle/e-challan:',
+  asyncHandler(async (req, res) => {
+    try {
+      const { vehicle_no } = req.query;
+
+      // Validate input
+      if (!vehicle_no) {
+        return res.status(400).json({ error: 'Vehicle number is required.' });
+      }
+
+      // Fetch e-challan data
+      const challans = eChallanData[vehicle_no];
+      console.log("data", challans);
+
+      const {
+        challanNo,
+            date,
+            amount,
+            status,
+            violation,
+            location,
+      } = challans;
+
+       // Save the vehicle data to the database
+       const newChallan = await Echallan.create({
+        //userId,
+        vehicle_no,
+        challans: 
+                 {
+                  challanNo,
+                  date,
+                  amount,
+                  status,
+                  violation,
+                  location,
+                 },
+                
+      })
+
+      if (!challans || challans.length === 0) {
+        return res.status(404).json({ error: 'No e-challan records found for this vehicle.' });
+      }
+
+      // Return response
+     /* res.status(200).json({
+        message: 'E-challan records fetched successfully.',
+        vehicle_no,
+        challans,
+      });*/
+      
+      return res.status(200).json({
+        message:"Vehicle create successfully",
+        vehicle:newChallan
+      });
+    } catch (error) {
+      console.error('Error fetching e-challan data:', error.message);
+      res.status(500).json({ error: 'Internal server error while fetching e-challan data.' });
+    }
+  })
+);
+
+
+
+
+
 /*router.get(
   '/rto/:rc_regn_no',
   asyncHandler(async (req, res) => {

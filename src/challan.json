@@ -1,0 +1,18 @@
+{
+    "MH20HC7323" : {
+        "challanNo": "CHL001234",
+        "date": "2024-12-20",
+        "amount": "500",
+        "status": "Pending",
+        "violation": "Speeding",
+        "location": "Chhatrapati Sambhajinagar"
+      },
+      "MH24AN2786":{
+        "challanNo": "CHL001235",
+        "date": "2024-10-15",
+        "amount": "300",
+        "status": "Paid",
+        "violation": "Parking Violation",
+        "location": "Chhatrapati Sambhajinagar"
+      }
+}

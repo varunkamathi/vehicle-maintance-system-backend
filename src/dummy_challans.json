@@ -1,0 +1,513 @@
+[
+    {
+        "vehicle_number": "MH20FV6258",
+        "challans": [
+            {
+                "challan_id": "CHAL480007",
+                "vehicle_number": "MH20FV6258",
+                "challan_date": "2024-08-15",
+                "violation_type": "Wrong Parking",
+                "amount": 865,
+                "status": "Pending",
+                "issued_by": "Mumbai Traffic Police",
+                "due_date": "2024-09-14",
+                "location": "Mumbai - Andheri East",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL352041",
+                "vehicle_number": "MH20FV6258",
+                "challan_date": "2024-08-02",
+                "violation_type": "Drunk Driving",
+                "amount": 462,
+                "status": "Overdue",
+                "issued_by": "Pune Traffic Police",
+                "due_date": "2024-09-01",
+                "location": "Nagpur - Sadar",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL130137",
+                "vehicle_number": "MH20FV6258",
+                "challan_date": "2024-11-04",
+                "violation_type": "Signal Jumping",
+                "amount": 1793,
+                "status": "Pending",
+                "issued_by": "Pune Traffic Police",
+                "due_date": "2024-12-04",
+                "location": "Pune - Shivajinagar",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL894015",
+                "vehicle_number": "MH20FV6258",
+                "challan_date": "2024-12-23",
+                "violation_type": "Over-Speeding",
+                "amount": 1968,
+                "status": "Pending",
+                "issued_by": "Mumbai Traffic Police",
+                "due_date": "2025-01-22",
+                "location": "Thane - Mulund",
+                "remarks": "Auto-generated dummy challan data."
+            }
+        ]
+    },
+    {
+        "vehicle_number": "MH38AH4273",
+        "challans": [
+            {
+                "challan_id": "CHAL811828",
+                "vehicle_number": "MH38AH4273",
+                "challan_date": "2024-11-05",
+                "violation_type": "Signal Jumping",
+                "amount": 950,
+                "status": "Overdue",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-12-05",
+                "location": "Pune - Shivajinagar",
+                "remarks": "Auto-generated dummy challan data."
+            }
+        ]
+    },
+    {
+        "vehicle_number": "MH20BS2622",
+        "challans": [
+            {
+                "challan_id": "CHAL738495",
+                "vehicle_number": "MH20BS2622",
+                "challan_date": "2024-07-02",
+                "violation_type": "Drunk Driving",
+                "amount": 1354,
+                "status": "Pending",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-08-01",
+                "location": "Thane - Mulund",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL691425",
+                "vehicle_number": "MH20BS2622",
+                "challan_date": "2024-10-31",
+                "violation_type": "Signal Jumping",
+                "amount": 1720,
+                "status": "Overdue",
+                "issued_by": "Mumbai Traffic Police",
+                "due_date": "2024-11-30",
+                "location": "Nagpur - Sadar",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL256383",
+                "vehicle_number": "MH20BS2622",
+                "challan_date": "2024-12-14",
+                "violation_type": "Signal Jumping",
+                "amount": 1841,
+                "status": "Pending",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2025-01-13",
+                "location": "Nashik - Panchavati",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL464393",
+                "vehicle_number": "MH20BS2622",
+                "challan_date": "2024-07-09",
+                "violation_type": "Over-Speeding",
+                "amount": 1387,
+                "status": "Pending",
+                "issued_by": "Pune Traffic Police",
+                "due_date": "2024-08-08",
+                "location": "Mumbai - Andheri East",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL328720",
+                "vehicle_number": "MH20BS2622",
+                "challan_date": "2024-09-18",
+                "violation_type": "Signal Jumping",
+                "amount": 264,
+                "status": "Overdue",
+                "issued_by": "Pune Traffic Police",
+                "due_date": "2024-10-18",
+                "location": "Pune - Shivajinagar",
+                "remarks": "Auto-generated dummy challan data."
+            }
+        ]
+    },
+    {
+        "vehicle_number": "MH20ED7422",
+        "challans": [
+            {
+                "challan_id": "CHAL312136",
+                "vehicle_number": "MH20ED7422",
+                "challan_date": "2024-07-07",
+                "violation_type": "Driving Without License",
+                "amount": 748,
+                "status": "Overdue",
+                "issued_by": "Mumbai Traffic Police",
+                "due_date": "2024-08-06",
+                "location": "Nashik - Panchavati",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL836777",
+                "vehicle_number": "MH20ED7422",
+                "challan_date": "2024-09-08",
+                "violation_type": "Over-Speeding",
+                "amount": 300,
+                "status": "Pending",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-10-08",
+                "location": "Nashik - Panchavati",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL675511",
+                "vehicle_number": "MH20ED7422",
+                "challan_date": "2024-07-12",
+                "violation_type": "Wrong Parking",
+                "amount": 1895,
+                "status": "Overdue",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-08-11",
+                "location": "Nashik - Panchavati",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL248401",
+                "vehicle_number": "MH20ED7422",
+                "challan_date": "2024-09-23",
+                "violation_type": "Signal Jumping",
+                "amount": 892,
+                "status": "Pending",
+                "issued_by": "Mumbai Traffic Police",
+                "due_date": "2024-10-23",
+                "location": "Thane - Mulund",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL196673",
+                "vehicle_number": "MH20ED7422",
+                "challan_date": "2024-09-21",
+                "violation_type": "Signal Jumping",
+                "amount": 192,
+                "status": "Pending",
+                "issued_by": "Mumbai Traffic Police",
+                "due_date": "2024-10-21",
+                "location": "Pune - Shivajinagar",
+                "remarks": "Auto-generated dummy challan data."
+            }
+        ]
+    },
+    {
+        "vehicle_number": "MH20FD5304",
+        "challans": [
+            {
+                "challan_id": "CHAL480213",
+                "vehicle_number": "MH20FD5304",
+                "challan_date": "2024-07-11",
+                "violation_type": "Drunk Driving",
+                "amount": 1343,
+                "status": "Pending",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-08-10",
+                "location": "Nashik - Panchavati",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL239991",
+                "vehicle_number": "MH20FD5304",
+                "challan_date": "2024-10-22",
+                "violation_type": "No Helmet",
+                "amount": 1491,
+                "status": "Overdue",
+                "issued_by": "Mumbai Traffic Police",
+                "due_date": "2024-11-21",
+                "location": "Thane - Mulund",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL968711",
+                "vehicle_number": "MH20FD5304",
+                "challan_date": "2024-12-15",
+                "violation_type": "No Helmet",
+                "amount": 136,
+                "status": "Overdue",
+                "issued_by": "Pune Traffic Police",
+                "due_date": "2025-01-14",
+                "location": "Nashik - Panchavati",
+                "remarks": "Auto-generated dummy challan data."
+            }
+        ]
+    },
+    {
+        "vehicle_number": "MH20CF6394",
+        "challans": [
+            {
+                "challan_id": "CHAL172997",
+                "vehicle_number": "MH20CF6394",
+                "challan_date": "2024-07-20",
+                "violation_type": "Over-Speeding",
+                "amount": 140,
+                "status": "Overdue",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-08-19",
+                "location": "Nashik - Panchavati",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL893937",
+                "vehicle_number": "MH20CF6394",
+                "challan_date": "2024-07-26",
+                "violation_type": "Driving Without License",
+                "amount": 816,
+                "status": "Pending",
+                "issued_by": "Mumbai Traffic Police",
+                "due_date": "2024-08-25",
+                "location": "Nagpur - Sadar",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL689416",
+                "vehicle_number": "MH20CF6394",
+                "challan_date": "2024-10-30",
+                "violation_type": "Wrong Parking",
+                "amount": 1498,
+                "status": "Overdue",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-11-29",
+                "location": "Mumbai - Andheri East",
+                "remarks": "Auto-generated dummy challan data."
+            }
+        ]
+    },
+    {
+        "vehicle_number": "MH20CX6554",
+        "challans": [
+            {
+                "challan_id": "CHAL180337",
+                "vehicle_number": "MH20CX6554",
+                "challan_date": "2024-10-18",
+                "violation_type": "Signal Jumping",
+                "amount": 427,
+                "status": "Pending",
+                "issued_by": "Mumbai Traffic Police",
+                "due_date": "2024-11-17",
+                "location": "Nagpur - Sadar",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL265357",
+                "vehicle_number": "MH20CX6554",
+                "challan_date": "2024-10-03",
+                "violation_type": "Over-Speeding",
+                "amount": 387,
+                "status": "Pending",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-11-02",
+                "location": "Mumbai - Andheri East",
+                "remarks": "Auto-generated dummy challan data."
+            }
+        ]
+    },
+    {
+        "vehicle_number": "MH20EZ9841",
+        "challans": [
+            {
+                "challan_id": "CHAL646071",
+                "vehicle_number": "MH20EZ9841",
+                "challan_date": "2024-08-07",
+                "violation_type": "Over-Speeding",
+                "amount": 1821,
+                "status": "Pending",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-09-06",
+                "location": "Nagpur - Sadar",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL731499",
+                "vehicle_number": "MH20EZ9841",
+                "challan_date": "2024-08-26",
+                "violation_type": "No Helmet",
+                "amount": 1575,
+                "status": "Paid",
+                "issued_by": "Pune Traffic Police",
+                "due_date": "2024-09-25",
+                "location": "Thane - Mulund",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL981084",
+                "vehicle_number": "MH20EZ9841",
+                "challan_date": "2024-08-06",
+                "violation_type": "Signal Jumping",
+                "amount": 460,
+                "status": "Pending",
+                "issued_by": "Pune Traffic Police",
+                "due_date": "2024-09-05",
+                "location": "Nashik - Panchavati",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL500490",
+                "vehicle_number": "MH20EZ9841",
+                "challan_date": "2024-09-17",
+                "violation_type": "Signal Jumping",
+                "amount": 1837,
+                "status": "Overdue",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-10-17",
+                "location": "Mumbai - Andheri East",
+                "remarks": "Auto-generated dummy challan data."
+            }
+        ]
+    },
+    {
+        "vehicle_number": "MH20ET6014",
+        "challans": [
+            {
+                "challan_id": "CHAL664411",
+                "vehicle_number": "MH20ET6014",
+                "challan_date": "2024-08-13",
+                "violation_type": "No Helmet",
+                "amount": 1243,
+                "status": "Overdue",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-09-12",
+                "location": "Pune - Shivajinagar",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL708858",
+                "vehicle_number": "MH20ET6014",
+                "challan_date": "2024-11-02",
+                "violation_type": "No Helmet",
+                "amount": 427,
+                "status": "Overdue",
+                "issued_by": "Pune Traffic Police",
+                "due_date": "2024-12-02",
+                "location": "Mumbai - Andheri East",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL489713",
+                "vehicle_number": "MH20ET6014",
+                "challan_date": "2024-08-10",
+                "violation_type": "Over-Speeding",
+                "amount": 1562,
+                "status": "Pending",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-09-09",
+                "location": "Nagpur - Sadar",
+                "remarks": "Auto-generated dummy challan data."
+            }
+        ]
+    },
+    {
+        "vehicle_number": "MH20FA2336",
+        "challans": [
+            {
+                "challan_id": "CHAL197310",
+                "vehicle_number": "MH20FA2336",
+                "challan_date": "2024-10-08",
+                "violation_type": "Driving Without License",
+                "amount": 597,
+                "status": "Paid",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-11-07",
+                "location": "Mumbai - Andheri East",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL598448",
+                "vehicle_number": "MH20FA2336",
+                "challan_date": "2024-10-24",
+                "violation_type": "Wrong Parking",
+                "amount": 1525,
+                "status": "Overdue",
+                "issued_by": "Pune Traffic Police",
+                "due_date": "2024-11-23",
+                "location": "Mumbai - Andheri East",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL117436",
+                "vehicle_number": "MH20FA2336",
+                "challan_date": "2024-08-16",
+                "violation_type": "No Helmet",
+                "amount": 1320,
+                "status": "Overdue",
+                "issued_by": "Pune Traffic Police",
+                "due_date": "2024-09-15",
+                "location": "Pune - Shivajinagar",
+                "remarks": "Auto-generated dummy challan data."
+            }
+        ]
+    },
+    {
+        "vehicle_number": "MH20GS8006",
+        "challans": [
+            {
+                "challan_id": "CHAL121474",
+                "vehicle_number": "MH20GS8006",
+                "challan_date": "2024-07-04",
+                "violation_type": "Signal Jumping",
+                "amount": 1690,
+                "status": "Overdue",
+                "issued_by": "Nagpur Traffic Police",
+                "due_date": "2024-08-03",
+                "location": "Thane - Mulund",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL645542",
+                "vehicle_number": "MH20GS8006",
+                "challan_date": "2024-10-24",
+                "violation_type": "No Helmet",
+                "amount": 1765,
+                "status": "Paid",
+                "issued_by": "Mumbai Traffic Police",
+                "due_date": "2024-11-23",
+                "location": "Pune - Shivajinagar",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL246219",
+                "vehicle_number": "MH20GS8006",
+                "challan_date": "2024-07-04",
+                "violation_type": "Driving Without License",
+                "amount": 310,
+                "status": "Pending",
+                "issued_by": "Mumbai Traffic Police",
+                "due_date": "2024-08-03",
+                "location": "Mumbai - Andheri East",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL824575",
+                "vehicle_number": "MH20GS8006",
+                "challan_date": "2024-09-10",
+                "violation_type": "Signal Jumping",
+                "amount": 1848,
+                "status": "Overdue",
+                "issued_by": "Pune Traffic Police",
+                "due_date": "2024-10-10",
+                "location": "Nagpur - Sadar",
+                "remarks": "Auto-generated dummy challan data."
+            },
+            {
+                "challan_id": "CHAL890934",
+                "vehicle_number": "MH20GS8006",
+                "challan_date": "2024-07-28",
+                "violation_type": "Driving Without License",
+                "amount": 1149,
+                "status": "Paid",
+                "issued_by": "Pune Traffic Police",
+                "due_date": "2024-08-27",
+                "location": "Nagpur - Sadar",
+                "remarks": "Auto-generated dummy challan data."
+            }
+        ]
+    }
+]
