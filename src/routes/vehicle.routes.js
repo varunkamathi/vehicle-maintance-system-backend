@@ -65,6 +65,25 @@ router.get(
   })
 );
 
+router.get(
+  '/get/challan/:userId',
+  asyncHandler(async (req, res) => {
+    const { userId } = req.params;
+
+    try {
+      const challans = await Echallan.find({ userId });
+      // const vehicles = await Vehicle.find({ userId }).sort({ createdAt: 1 });
+      if (!challans || challans.length === 0) {
+        return res.status(404).json({ error: 'No vehicles found for this user.' });
+      }
+      res.status(200).json(challans);
+    } catch (error) {
+      console.error('Error fetching vehicles:', error.message);
+      res.status(500).json({ error: 'Internal server error while fetching vehicles.' });
+    }
+  })
+);
+
 /**
  * Route to delete a vehicle
  * Endpoint: DELETE /api/vehicles/:id
@@ -213,7 +232,7 @@ router.get(
   '/vehicle/e-challan:',
   asyncHandler(async (req, res) => {
     try {
-      const { vehicle_no } = req.query;
+      const { vehicle_no, userId } = req.query;
 
       // Validate input
       if (!vehicle_no) {
@@ -221,8 +240,8 @@ router.get(
       }
 
       // Fetch e-challan data
-      const challans = eChallanData[vehicle_no];
-      console.log("data", challans);
+      const challan = eChallanData[vehicle_no];
+      console.log("data", challan);
 
       const {
         challanNo,
@@ -231,11 +250,11 @@ router.get(
             status,
             violation,
             location,
-      } = challans;
+      } = challan;
 
        // Save the vehicle data to the database
        const newChallan = await Echallan.create({
-        //userId,
+        userId,
         vehicle_no,
         challans: 
                  {
@@ -249,7 +268,7 @@ router.get(
                 
       })
 
-      if (!challans || challans.length === 0) {
+      if (!challan || challan.length === 0) {
         return res.status(404).json({ error: 'No e-challan records found for this vehicle.' });
       }
 
@@ -262,7 +281,7 @@ router.get(
       
       return res.status(200).json({
         message:"Vehicle create successfully",
-        vehicle:newChallan
+        challan:newChallan
       });
     } catch (error) {
       console.error('Error fetching e-challan data:', error.message);
