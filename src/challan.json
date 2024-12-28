@@ -14,5 +14,13 @@
         "status": "Paid",
         "violation": "Parking Violation",
         "location": "Chhatrapati Sambhajinagar"
+      },
+        "MH19DG8298":{
+        "challanNo": "CHL001235",
+        "date": "2024-10-16",
+        "amount": "3000",
+        "status": "UnPaid",
+        "violation": "WITHOUT HELMET",
+        "location": "Chhatrapati Sambhajinagar"
       }
 }
