@@ -3,11 +3,13 @@ import { addVehicle, getVehicles } from '../controllers/vehicle.controller.js';
 import { verifyJWT } from '../middlewares/auth.middlewares.js';
 import axios from 'axios';
 import dotenv from 'dotenv';
+import multer from 'multer'
 import { asyncHandler } from '../util/asyncHandler.js';
 import {Vehicle} from '../model/vehicle.model.js';
 import {Echallan} from '../model/vehicle.model.js';  // Import the Vehicle model
 import vehicleData from '../data.json' assert { type: 'json' };
 import eChallanData from '../challan.json' assert { type: 'json' };
+import { Document } from '../model/vehicle.model.js';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -401,5 +403,39 @@ router.get(
     }
   })
 }));*/
+
+// Set up multer for in-memory file storage
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
+
+// Route to upload a PDF
+router.post(
+  '/upload',
+  upload.single('file'),
+  asyncHandler(async (req, res) => {
+    const { userId } = req.query;
+
+    const newDocument = new Document({
+      userId,
+      fileName: req.file.originalname,
+      fileData: req.file.buffer,
+      contentType: req.file.mimetype,
+    });
+    await newDocument.save();
+    res.status(201).json({ message: 'File uploaded successfully', document: newDocument });
+  })
+);
+
+// Route to fetch all uploaded PDFs
+router.get(
+  '/documents',
+  asyncHandler(async (req, res) => {
+    const { userId } = req.query;
+
+    const documents = await Document.find({userId});
+    res.status(200).json(documents);
+  })
+);
+
 
 export default router;

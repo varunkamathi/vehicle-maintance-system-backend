@@ -82,6 +82,20 @@ const VehicleSchema = new mongoose.Schema({
   
 });
 
+
+const documentSchema = new mongoose.Schema({
+  userId: {  
+    type: Schema.Types.ObjectId,
+    ref: "User" 
+  },
+  fileName: { type: String, required: true },
+  fileData: { type: Buffer, required: true },
+  contentType: { type: String, required: true },
+}, { timestamps: true });
+
+
+
+export const Document = mongoose.model('Document', documentSchema);
 export const Echallan = mongoose.model('Echallan',eChallanSchema);
 export const Vehicle = mongoose.model('Vehicle', VehicleSchema);
 
